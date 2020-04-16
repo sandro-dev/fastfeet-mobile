@@ -1,14 +1,10 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-import { Container, TInput } from './styles';
+import { TInput } from './styles';
 
 function Input({ styles, ...rest }, ref) {
-  return (
-    <Container styles={styles}>
-      <TInput {...rest} ref={ref} />
-    </Container>
-  );
+  return <TInput styles={styles} {...rest} ref={ref} />;
 }
 
 Input.propTypes = {

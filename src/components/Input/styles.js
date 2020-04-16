@@ -1,18 +1,17 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
-  padding: 0 15px;
-  height: 46px;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  flex-direction: row;
-  align-items: center;
-`;
 export const TInput = styled.TextInput.attrs({
   placeholderTextColor: '#999',
 })`
-  flex: 1;
-  font-size: 16px;
-  color: #fff;
   padding: 12px 20px;
+  min-height: 46px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #444;
 `;
