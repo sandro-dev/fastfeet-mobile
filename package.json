@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.9.0",
     "@react-native-community/masked-view": "^0.1.9",
+    "axios": "^0.19.2",
     "immer": "^6.0.3",
     "polished": "^3.5.1",
     "prop-types": "^15.7.2",
