@@ -1,16 +1,15 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
-import { parseISO, format } from 'date-fns';
 import { Alert } from 'react-native';
-import api from '~/services/api';
+import { parseISO, format } from 'date-fns';
 
 import { signInSuccess, signFailure } from './actions';
+import api from '~/services/api';
 
-export function* signIn({ payload }) {
+export function* singIn({ payload }) {
   try {
     const { id } = payload;
 
     const response = yield call(api.get, `deliverymen/${id}`);
-
     yield put(
       signInSuccess(id, {
         name: response.data.name,
@@ -19,28 +18,13 @@ export function* signIn({ payload }) {
         avatar: response.data.avatar,
       })
     );
-  } catch (error) {
-    Alert.alert('Falha na autenticação', 'verifique seus dados!');
+  } catch (err) {
+    Alert.alert(
+      'Falha na autenticação',
+      'Houve um erro ao efetuar o login, verifique seus dados'
+    );
     yield put(signFailure());
   }
 }
 
-export function setToken({ payload }) {
-  if (!payload) return;
-
-  const { token } = payload.auth;
-
-  if (token) {
-    api.defaults.headers.Authorization = `Bearer ${token}`;
-  }
-}
-
-export function signOut() {
-  // history.push('/');
-}
-
-export default all([
-  takeLatest('persist/REHYDRATE', setToken),
-  takeLatest('@auth/SIGN_IN_REQUEST', signIn),
-  takeLatest('@auth/SIGN_OUT', signOut),
-]);
+export default all([takeLatest('@auth/SIGN_IN_REQUEST', singIn)]);
