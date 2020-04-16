@@ -1,17 +1,36 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { Image } from 'react-native';
+import logo from '~/assets/logo.png';
+import Background from '~/components/Background';
 
-// import { Container } from './styles';
+import { Container, Form, FormInput, SubmitButton } from './styles';
 
-export default function SignIn() {
+export default function SignIn({ navigation }) {
+  const [id, setId] = useState();
+
+  function handleSubmit(data) {
+    console.tron.log('Signin handleSubmit', data);
+  }
+
   return (
-    <View>
-      <Text>SignIn</Text>
-      <Text>SignIn</Text>
-      <Text>SignIn</Text>
-      <Text styles={{ color: '#f00' }}>SignIn</Text>
-      <Text>SignIn</Text>
-      <Text>SignIn</Text>
-    </View>
+    <Background>
+      <Container>
+        <Image source={logo} />
+        <Form>
+          <FormInput
+            autoCorrect={false}
+            autoCapitalize="none"
+            placeholder="Informe seu ID de cadastro"
+            returnKeyType="send"
+            onSubmitEditing={handleSubmit}
+            value={id}
+            onChangeText={setId}
+          />
+          <SubmitButton loading={false} onPress={handleSubmit}>
+            Entrar no sistema
+          </SubmitButton>
+        </Form>
+      </Container>
+    </Background>
   );
 }
