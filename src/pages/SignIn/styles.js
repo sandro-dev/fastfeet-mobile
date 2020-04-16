@@ -1,7 +1,8 @@
 import { Platform } from 'react-native';
 import styled from 'styled-components/native';
 
-import Input from '~/components/Input';
+// import Input from '~/components/Input';
+import UnformInput from '~/components/UnInput';
 import Button from '~/components/Button';
 
 export const Container = styled.KeyboardAvoidingView.attrs({
@@ -14,17 +15,13 @@ export const Container = styled.KeyboardAvoidingView.attrs({
   padding: 0 30px;
 `;
 
-export const Form = styled.View`
-  align-self: stretch;
-  margin-top: 50px;
-`;
-
-export const FormInput = styled(Input)`
+export const UnInput = styled(UnformInput)`
+  margin-top: 37.5px;
   margin-bottom: 10px;
-  padding: 10px;
 `;
 
 export const SubmitButton = styled(Button)`
   margin-top: 5px;
   background-color: #82bf18;
+  align-self: stretch;
 `;
