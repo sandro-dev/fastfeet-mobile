@@ -4,6 +4,7 @@ export function signInRequest(id) {
     payload: { id },
   };
 }
+
 export function signInSuccess(id, user) {
   return {
     type: '@auth/SIGN_IN_SUCCESS',
@@ -13,7 +14,7 @@ export function signInSuccess(id, user) {
 
 export function signFailure() {
   return {
-    type: '@auth/SIGN_FAILURE',
+    type: '@auth/SIGN_IN_FAILURE',
   };
 }
 
