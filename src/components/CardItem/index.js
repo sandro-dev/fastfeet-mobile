@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useNavigation } from '@react-navigation/native';
 import CardStatus from '~/components/CardStatus';
@@ -14,7 +15,7 @@ import {
   TextLink,
 } from './styles';
 
-export default function Delivey({ data }) {
+export default function CardItem({ data }) {
   const navigation = useNavigation();
 
   return (
@@ -48,3 +49,13 @@ export default function Delivey({ data }) {
     </Container>
   );
 }
+
+CardItem.propTypes = {
+  data: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
+  ),
+};
+
+CardItem.defaultProps = {
+  data: null,
+};
