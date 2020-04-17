@@ -5,7 +5,7 @@ import { sample } from 'lodash';
 import { Image, Icon } from './styles';
 import Text from '~/components/Text';
 
-export default function Avatar({ fullname, isPhoto, url }) {
+export default function Avatar({ isPhoto, style, fullname, url }) {
   if (isPhoto) {
     return <Image source={{ uri: url }} />;
   }
@@ -27,7 +27,7 @@ export default function Avatar({ fullname, isPhoto, url }) {
   const initials = fname.split('').shift() + lname.split('').shift();
 
   return (
-    <Icon bgcolor={select.bgcolor}>
+    <Icon bgcolor={select.bgcolor} style={style}>
       <Text color={select.color}>{initials}</Text>
     </Icon>
   );

@@ -16,8 +16,8 @@ export const Text = styled.Text`
 `;
 
 export const Icon = styled.View`
-  width: 136px;
-  height: 136px;
+  width: ${(props) => (props.style ? props.style.size : 136)}px;
+  height: ${(props) => (props.style ? props.style.size : 136)}px;
   border-radius: 68px;
   background-color: #f4effc;
   flex: 1;
