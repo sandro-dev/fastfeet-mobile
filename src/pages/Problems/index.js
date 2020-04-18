@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useRoute, useNavigation } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import formatDate from '~/util/formatDate';
 
 import api from '~/services/api';
@@ -12,7 +12,6 @@ import {
   ProblemItem,
   ProblemDescription,
   ProblemDate,
-  Card,
 } from './styles';
 
 export default function Problems() {
