@@ -27,7 +27,7 @@ export default function Profile() {
     <Container>
       <Content>
         {profile?.avatar ? (
-          <Avatar isPhoto url={profile?.avatar?.url} />
+          <Avatar isPhoto url={profile?.avatar?.url} custom={{ size: 136 }} />
         ) : (
           <>
             {profile?.name && (
