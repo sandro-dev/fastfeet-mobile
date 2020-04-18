@@ -24,9 +24,10 @@ export const ContainerForm = styled.SafeAreaView`
 export const Input = styled.TextInput`
   color: #999;
   font-size: 16px;
-  background-color: #f4f4f4;
+  background-color: #fff;
   border-radius: 4px;
   padding: 10px 15px;
+  elevation: 1;
 `;
 
 export const SubmitButton = styled(Button)`
