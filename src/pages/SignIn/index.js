@@ -32,10 +32,7 @@ export default function SignIn() {
             returnKeyType="send"
             autoCapitalize="none"
           />
-          <SubmitButton
-            loading={loading}
-            onPress={() => formRef.current.submitForm()}
-          >
+          <SubmitButton onPress={() => formRef.current.submitForm()}>
             Entrar no sistema
           </SubmitButton>
         </Form>
