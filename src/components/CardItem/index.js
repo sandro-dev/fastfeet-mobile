@@ -51,11 +51,13 @@ export default function CardItem({ data }) {
 }
 
 CardItem.propTypes = {
-  data: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
-  ),
+  data: PropTypes.shape({
+    status: PropTypes.string,
+    formated_start: PropTypes.string,
+    recipient: PropTypes.object,
+  }),
 };
 
 CardItem.defaultProps = {
-  data: null,
+  data: {},
 };
