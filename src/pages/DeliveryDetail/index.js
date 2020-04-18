@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from 'react-native';
+import { StatusBar, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useSelector } from 'react-redux';
 import { useRoute, useNavigation } from '@react-navigation/native';
@@ -61,6 +61,8 @@ export default function DeliveryDetail() {
 
   return (
     <Container>
+      <StatusBar backgroundColor="#7d40e7" barStyle="light-content" />
+
       <Background />
       <ContentContainer>
         <Card>
@@ -100,13 +102,13 @@ export default function DeliveryDetail() {
         </Card>
 
         <Actions>
-          <Action>
+          <Action
+            onPress={() => navigation.navigate('ReportProblem', { delivery })}
+          >
             <Icon name="highlight-off" color="#E74040" size={20} />
             <ActionTitle>Informar{`\n`}Problema</ActionTitle>
           </Action>
-          <Action
-            onPress={() => navigation.navigate('Problemas', { delivery })}
-          >
+          <Action onPress={() => navigation.navigate('Problems', { delivery })}>
             <Icon name="info-outline" color="#E7BA40" size={20} />
             <ActionTitle>Visualizar{`\n`}Problemas</ActionTitle>
           </Action>

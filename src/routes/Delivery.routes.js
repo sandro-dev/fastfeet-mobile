@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Deliveries from '~/pages/Deliveries';
 import DeliveryDetail from '~/pages/DeliveryDetail';
 import Problems from '~/pages/Problems';
+import ReportProblem from '~/pages/ReportProblem';
 
 const Stack = createStackNavigator();
 
@@ -35,7 +36,15 @@ export default function DeliveryRoutes() {
         component={DeliveryDetail}
       />
       <Stack.Screen
-        name="Problemas"
+        name="ReportProblem"
+        options={{
+          title: 'Informar Problema',
+        }}
+        component={ReportProblem}
+      />
+
+      <Stack.Screen
+        name="Problems"
         options={{
           title: 'Visualizar Problemas',
         }}
