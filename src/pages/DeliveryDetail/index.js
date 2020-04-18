@@ -104,7 +104,9 @@ export default function DeliveryDetail() {
             <Icon name="highlight-off" color="#E74040" size={20} />
             <ActionTitle>Informar{`\n`}Problema</ActionTitle>
           </Action>
-          <Action>
+          <Action
+            onPress={() => navigation.navigate('Problemas', { delivery })}
+          >
             <Icon name="info-outline" color="#E7BA40" size={20} />
             <ActionTitle>Visualizar{`\n`}Problemas</ActionTitle>
           </Action>
