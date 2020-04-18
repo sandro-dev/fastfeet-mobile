@@ -70,10 +70,9 @@ export default function Deliveries() {
     <Container>
       <Header>
         {profile?.avatar ? (
-          // <Avatar isPhoto url={profile?.avatar?.url}  />
-          <Avatar isPhoto url={profile?.avatar?.url} style={{ size: 68 }} />
+          <Avatar isPhoto url={profile?.avatar?.url} custom={{ size: 68 }} />
         ) : (
-          <Avatar fullname={profile?.name} style={{ size: 68, font: 20 }} />
+          <Avatar fullname={profile?.name} custom={{ size: 68, font: 20 }} />
         )}
 
         <WelcomeContainer>

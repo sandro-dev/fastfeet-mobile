@@ -27,10 +27,16 @@ export default function Profile() {
     <Container>
       <Content>
         {profile?.avatar ? (
-          // profile?.avatar?.url
           <Avatar isPhoto url={profile?.avatar?.url} />
         ) : (
-          <>{profile?.name && <Avatar fullname={profile?.name} />}</>
+          <>
+            {profile?.name && (
+              <Avatar
+                fullname={profile?.name}
+                custom={{ size: 136, font: 60 }}
+              />
+            )}
+          </>
         )}
 
         <ProfileDetails>
