@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { sample } from 'lodash';
 
-import { Image, Icon } from './styles';
-import Text from '~/components/Text';
+import { Container, Image, Icon, Text } from './styles';
+// import Text from '~/components/Text';
 
 export default function Avatar({ isPhoto, style, fullname, url }) {
   if (isPhoto) {
-    return <Image source={{ uri: url }} />;
+    return <Image source={{ uri: url }} style={style} />;
   }
 
   const pallete = [
@@ -21,15 +21,21 @@ export default function Avatar({ isPhoto, style, fullname, url }) {
 
   const select = sample(pallete);
 
-  const name = fullname.split(' ');
+  const name = fullname?.split(' ');
   const fname = name.shift();
   const lname = name.pop();
-  const initials = fname.split('').shift() + lname.split('').shift();
+  const initials = fname?.split('').shift() + lname?.split('').shift();
 
   return (
-    <Icon bgcolor={select.bgcolor} style={style}>
-      <Text color={select.color}>{initials}</Text>
-    </Icon>
+    <Container bgcolor={select.bgcolor} style={style}>
+      <Icon>
+        {fullname ? (
+          <Text color={select.color} style={style}>
+            {initials}
+          </Text>
+        ) : null}
+      </Icon>
+    </Container>
   );
 }
 
