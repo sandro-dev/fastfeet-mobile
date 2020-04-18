@@ -1,7 +1,6 @@
 import { Platform } from 'react-native';
 import styled from 'styled-components/native';
 
-// import Input from '~/components/Input';
 import UnformInput from '~/components/UnInput';
 import Button from '~/components/Button';
 
@@ -17,7 +16,7 @@ export const Container = styled.KeyboardAvoidingView.attrs({
 
 export const UnInput = styled(UnformInput)`
   margin-top: 37.5px;
-  margin-bottom: 10px;
+  margin-bottom: 15.5px;
 `;
 
 export const SubmitButton = styled(Button)`

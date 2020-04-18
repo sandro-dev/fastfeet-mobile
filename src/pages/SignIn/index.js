@@ -5,9 +5,8 @@ import { Form } from '@unform/mobile';
 import { signInRequest } from '~/store/modules/auth/actions';
 import logo from '~/assets/logo.png';
 
-import { Container, SubmitButton } from './styles';
+import { Container, UnInput, SubmitButton } from './styles';
 import Background from '~/components/Background';
-import Input from '~/components/UnInput';
 
 export default function SignIn() {
   const dispatch = useDispatch();
@@ -15,7 +14,6 @@ export default function SignIn() {
   const formRef = useRef(null);
 
   function handleSubmit({ id }) {
-    console.tron.log('@@@id ->> ', id);
     dispatch(signInRequest(id));
   }
 
@@ -24,7 +22,7 @@ export default function SignIn() {
       <Container>
         <Image source={logo} />
         <Form ref={formRef} onSubmit={handleSubmit}>
-          <Input
+          <UnInput
             name="id"
             keyboardType="number-pad"
             placeholder="Informe seu ID no cadastro"
@@ -32,7 +30,10 @@ export default function SignIn() {
             returnKeyType="send"
             autoCapitalize="none"
           />
-          <SubmitButton onPress={() => formRef.current.submitForm()}>
+          <SubmitButton
+            onPress={() => formRef.current.submitForm()}
+            loading={loading}
+          >
             Entrar no sistema
           </SubmitButton>
         </Form>
