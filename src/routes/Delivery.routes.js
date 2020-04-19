@@ -6,6 +6,7 @@ import Deliveries from '~/pages/Deliveries';
 import DeliveryDetail from '~/pages/DeliveryDetail';
 import Problems from '~/pages/Problems';
 import ReportProblem from '~/pages/ReportProblem';
+import DeliveryConfirm from '~/pages/DelivevryConfirm';
 
 const Stack = createStackNavigator();
 
@@ -25,7 +26,7 @@ export default function DeliveryRoutes() {
     >
       <Stack.Screen
         options={{ headerShown: false }}
-        name="Entregas"
+        name="Deliveries"
         component={Deliveries}
       />
       <Stack.Screen
@@ -49,6 +50,14 @@ export default function DeliveryRoutes() {
           title: 'Visualizar Problemas',
         }}
         component={Problems}
+      />
+
+      <Stack.Screen
+        name="DeliveryConfirm"
+        options={{
+          title: 'Confirmar Entrega',
+        }}
+        component={DeliveryConfirm}
       />
     </Stack.Navigator>
   );
